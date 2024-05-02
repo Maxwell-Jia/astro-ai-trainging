@@ -1,0 +1,32 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python Debugger: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "args": [
+                "--dataset_name", "./datasets/lamost",
+                "--model_name_or_path", "./pretrained/spect",
+                "--output_dir", "./outputs/debug",
+                "--ignore_mismatched_sizes", "true",
+                "--do_train", "true",
+                "--do_eval", "true",
+                "--remove_unused_columns", "false",
+                "--evaluation_strategy", "steps",
+                "--eval_steps", "1",
+                "--overwrite_output_dir", "true",
+                "--report_to", "tensorboard",
+                "--load_best_model_at_end", "true",
+                "--logging_steps", "1",
+                "--max_eval_samples", "10"
+            ]
+        }
+    ]
+}
